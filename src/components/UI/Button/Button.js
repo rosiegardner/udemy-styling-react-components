@@ -1,33 +1,15 @@
-// 77. Introducing Styled Components //
+import React from 'react';
 
-import styled from 'styled-components';
-// line 7 & 16 - 79. Styled Components & Media Queries //
+// 80. Using CSS Modules //
+import styles from './Button.module.css';
 
-const Button = styled.button`
-  width: 100%; // for web application 'add goal'
-  font: inherit;
-  padding: 0.5rem 1.5rem;
-  border: 1px solid #8b005d;
-  color: white;
-  background: #8b005d;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
-  cursor: pointer;
-  
-  @media (min-width: 768px) {
-    width: auto;   // for mobile application 'add goal'
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:hover,
-  &:active {
-    background: #ac0e77;
-    border-color: #ac0e77;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
-  }
-`;
+const Button = props => {
+  return (
+    <button type={props.type} className={styles.button} onClick={props.onClick}>
+      {props.children}
+    </button>
+  );
+};
 
 
 export default Button;
@@ -46,3 +28,36 @@ export default Button;
 //     </button>
 //   );
 // };
+
+// 77-79. Introducing Styled Components //
+
+// line 7 & 16 - 79. Styled Components & Media Queries //
+
+// import styled from 'styled-components';
+
+
+// const Button = styled.button`
+//   width: 100%; // for web application 'add goal'
+//   font: inherit;
+//   padding: 0.5rem 1.5rem;
+//   border: 1px solid #8b005d;
+//   color: white;
+//   background: #8b005d;
+//   box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+//   cursor: pointer;
+  
+//   @media (min-width: 768px) {
+//     width: auto;   // for mobile application 'add goal'
+//   }
+
+//   &:focus {
+//     outline: none;
+//   }
+
+//   &:hover,
+//   &:active {
+//     background: #ac0e77;
+//     border-color: #ac0e77;
+//     box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
+//   }
+// `;
